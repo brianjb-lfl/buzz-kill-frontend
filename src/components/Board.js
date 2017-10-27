@@ -5,34 +5,32 @@ import { getPatrons } from '../actions';
 
 export class Board extends React.Component {
     
-    componentDidMount() {
-        this.props.dispatch(getPatrons()); 
-    }
+  componentDidMount() {
+    this.props.dispatch(getPatrons()); 
+  }
     
-    render() {
-        const initialData= this.props.patrons.sort((patron_1, patron_2) => (new Date(patron_2.start).getTime() - new Date(patron_1.start).getTime()))
-        
-        const patronList = initialData.map(patron => {
+  render() {
+    const initialData= this.props.patrons.sort((patron_1, patron_2) => (new Date(patron_2.start).getTime() - new Date(patron_1.start).getTime()))
+    const patronList = initialData.map(patron => {
+      return  <Patron
+        key={patron.id} 
+        timeOnSite={patron.timeOnSite}
+        bac={patron.bac}
+        id={patron.id}
+        drinks={patron.drinks} 
+        seatString={patron.seatString} />    
+    }); 
 
-            return  <Patron
-                key={patron.id} 
-                timeOnSite={patron.timeOnSite}
-                bac={patron.bac}
-                id={patron.id}
-                drinks={patron.drinks} 
-                seatString={patron.seatString} />    
-        }); 
-
-        return (
-            <div className="board">
-                {patronList}
-            </div>
-        )
-    }
+    return (
+      <div className="board">
+        {patronList}
+      </div>
+    )
+  }
 }
 
 export const mapStateToProps = state => ({
-    patrons: state.patrons
+  patrons: state.patrons
 }); 
 
 export default connect(mapStateToProps)(Board); 
