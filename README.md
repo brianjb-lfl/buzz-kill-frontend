@@ -1,6 +1,6 @@
 <p align="center"><img src="/img/logo.jpg" height="120" /></p>
-<h1>BACK-END</h1>
-<p><em>This document provides general information on the Buzz-Kill app and details on the api.  For more information about the Buzz-Kill client, please see <a href="https://github.com/jackseabolt/buzz-kill-frontend/blob/master/README.md">Buzz-Kill front end</a>.</em></p>
+<h1>CLIENT</h1>
+<p><em>This document provides general information on the Buzz-Kill app and details on the api.  For more information about the Buzz-Kill client, please see <a href="https://github.com/brianjb-lfl/buzz-kill-back/blob/master/README.md">Buzz-Kill back end</a>.</em></p>
 
 
 Why Buzz-Kill
@@ -53,19 +53,37 @@ Where to find Buzz-Kill
 |client code               |   https://github.com/brianjb-lfl/buzz-kill-frontend                     |
 |deployed api              |   https://buzz-kill-backend-bbp.herokuapp.com/                          |
 |api code                  |   https://github.com/brianjb-lfl/buzz-kill-back                         | 
-For local use
---------
 
-```bash
-# Clone repository
-git clone https://github.com/jackseabolt/buzz-kill-frontend.git
 
-# Change directory
-cd buzz-kill-frontend
+Local Client Use
+------
+1.  clone this repository<br>
+``` git clone https://github.com/brianjb-lfl/buzz-kill-frontend.git```<br>
 
-# Install NPM dependencies
-npm install
+2.  move to the repository's local directory<br>
+``` cd buzz-kill-frontend```<br>
 
-# Start the server
-npm start
-```
+3.  install dependencies<br>
+``` npm install```<br>
+
+note: use of this client requires a connection to an instance of the buzz-kill api<br>
+
+4.  by default the client will attempt to connect to the api's default url:<br>
+``` http://localhost:8080```<br>
+
+5.  if using the api on a different url, create a .env file in the client root with the following setting:<br>
+``` REACT_APP_API_URL= {insert api url here, w/o the brackets} ```<br>
+
+6.  start the client<br>
+``` npm start```<br>
+
+Technology Used
+------
+* javascript
+* html
+* css
+* react
+* react-redux
+* react-dom
+* enzyme
+* redux-thunk
