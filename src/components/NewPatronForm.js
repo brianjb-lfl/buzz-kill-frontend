@@ -48,8 +48,8 @@ export class NewPatronForm extends React.Component {
         <div className="newPatronForm">
           {formError}
           <form onSubmit={e => this.handleFormSubmit(e)} ref={form => this.form = form} className="form" > 
-            <input className="input" placeholder="5" ref={input => this.tableInput = input} />
-            <input className="input" placeholder="5" ref={input => this.seatInput = input} />
+            <input className="input" placeholder="99" ref={input => this.tableInput = input} />
+            <input className="input" placeholder="99" ref={input => this.seatInput = input} />
             <div className="radio-button-container">
               <input type="radio" className="radio" name="gender" value="male" id="male" /><label htmlFor="male">Male</label>
               <input type="radio" className="radio" name="gender" value="female" id="female" /><label htmlFor="female">Female</label>
@@ -63,7 +63,7 @@ export class NewPatronForm extends React.Component {
     return (
       <div className="newPatronToggleArea">
         <button className="button_blue" onClick={() => this.handleFormToggle()}>Add New Patron</button>
-        <button className="button_red" onClick={() => this.handleDeleteAll()}>Clear</button>
+        <button className="button_red" onClick={() => this.handleDeleteAll()}>Clear ALL Patrons</button>
         <audio ref={audio => this.audioPlayer = audio} >
           <source src="./sounds/open.m4a" type="audio/mp4" />
         </audio>
